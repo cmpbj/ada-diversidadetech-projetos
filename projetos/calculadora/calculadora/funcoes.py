@@ -1,6 +1,10 @@
 def soma(a, b):
-    soma = a + b
-    return soma
+    if type(a) == str or type(b) == str:
+        raise TypeError("Só números tipo int ou float são permitidos")
+
+    else:
+        soma = a + b
+        return soma
 
 
 def subtracao(a, b):
@@ -9,10 +13,16 @@ def subtracao(a, b):
 
 
 def multiplicacao(a, b):
-    multiplicacao = a * b
-    return multiplicacao
+    if type(a) == str or type(b) == str:
+        raise TypeError("Só números tipo int ou float são permitidos")
+    else:
+        multiplicacao = a * b
+        return multiplicacao
 
 
 def divisao(a, b):
-    divisao = a / b
-    return divisao
+    if b != 0:
+        divisao = a / b
+        return divisao
+    if b == 0:
+        raise Exception('Divisão inválida')
